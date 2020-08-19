@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
+  const [state, setState] = useState("WORLD");
+
+  useEffect(() => {
+  // Update the document title using the browser API
+    // document.title = `You clicked ${count} times`;
+    const interval = setInterval(gaj, 4000);
+    return () => clearInterval(interval);
+  });
+
+  function gaj(){
+    setState("GAJ MARIO");
+    x = setTimeout(()=> { setState("WORLD"); }, 100);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{state}</h1>
     </div>
   );
 }
