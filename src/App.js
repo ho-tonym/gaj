@@ -13,7 +13,7 @@ function App() {
 
   function gaj(){
     setState("GAJ MARIO");
-    x = setTimeout(()=> { setState("WORLD"); }, 100);
+    setTimeout(()=> { setState("WORLD"); }, 100);
   }
 
   return (
